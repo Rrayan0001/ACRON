@@ -6,6 +6,7 @@ import { MarqueeAnimation } from "@/components/ui/marquee-effect";
 import AnimatedLeadership from "@/components/ui/animated-leadership";
 import AnimatedProcess from "@/components/ui/animated-process";
 import AnimatedAbout from "@/components/ui/animated-about";
+import AnimatedServicesSpotlight from "@/components/ui/animated-services-spotlight";
 
 const services = [
   {
@@ -37,6 +38,33 @@ const services = [
     title: "Design-to-Site Integration",
     text: "Continuous alignment between office design intent and field implementation conditions through all phases.",
     tag: "Integration",
+  },
+];
+
+const serviceSpotlightMedia = [
+  {
+    src: "/images/arcon/hvac-overlay.jpg",
+    alt: "HVAC and MEP planning overlay for technical design.",
+  },
+  {
+    src: "/images/arcon/site-plan-table.jpg",
+    alt: "Architectural planning session with technical drawings.",
+  },
+  {
+    src: "/images/arcon/coordination-desk.jpg",
+    alt: "Civil and structural coordination team reviewing layouts.",
+  },
+  {
+    src: "/images/arcon/helmet-team.jpg",
+    alt: "Construction management team reviewing project progress.",
+  },
+  {
+    src: "/images/arcon/digital-twin-room.jpg",
+    alt: "Technical advisory and design review workspace.",
+  },
+  {
+    src: "/images/arcon/bim-routing.jpg",
+    alt: "BIM routing view showing integrated design-to-site alignment.",
   },
 ];
 
@@ -412,18 +440,11 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="services-grid services-grid-premium">
-              {services.map((service, i) => (
-                <article
-                  className="card reveal-card service-card"
-                  key={service.title}
-                  style={{ "--reveal-delay": `${(i + 2) * 0.1}s` }}
-                >
-                  <p className="pill service-pill">{service.tag}</p>
-                  <h3 className="service-title">{service.title}</h3>
-                  <p className="service-copy">{service.text}</p>
-                </article>
-              ))}
+            <div className="reveal-item" style={{ "--reveal-delay": "0.24s" }}>
+              <AnimatedServicesSpotlight
+                services={services}
+                media={serviceSpotlightMedia}
+              />
             </div>
           </div>
         </section>
