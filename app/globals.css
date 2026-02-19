@@ -74,7 +74,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 0;
+  padding: 0.4rem 0;
 }
 
 .brand {
@@ -94,6 +94,21 @@ a:hover {
   font-weight: 700;
   font-family: var(--font-display), sans-serif;
   color: var(--primary);
+}
+
+.brand-logo {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.site-header .brand-logo {
+  margin-top: -1.5rem;
+  margin-bottom: -1.5rem;
 }
 
 .brand-label {
@@ -1067,7 +1082,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 0;
+  padding: 0.4rem 0;
 }
 
 .brand {
@@ -1934,8 +1949,7 @@ h3 {
 .section-hero {
   position: relative;
   isolation: isolate;
-  background: url("/images/arcon/digital-twin-room.jpg") center center / cover
-    no-repeat !important;
+  background: url("/images/arcon/digital-twin-room.jpg") center center / cover no-repeat !important;
 }
 
 .section-hero::before {
@@ -1945,13 +1959,11 @@ h3 {
   pointer-events: none;
   z-index: 0;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(3, 8, 14, 0.78) 0%,
       rgba(3, 8, 14, 0.66) 36%,
       rgba(3, 8, 14, 0.48) 62%,
-      rgba(3, 8, 14, 0.28) 100%
-    );
+      rgba(3, 8, 14, 0.28) 100%);
 }
 
 .section-hero .hero-grid {
@@ -2191,6 +2203,7 @@ h3 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -2438,9 +2451,11 @@ h3 {
     transform: translateX(0);
     opacity: 0;
   }
+
   35% {
     opacity: 1;
   }
+
   to {
     transform: translateX(340%);
     opacity: 0;
@@ -2538,11 +2553,9 @@ h3 {
   height: 168px;
   border-radius: 999px;
   transform: translate(-50%, -50%) scale(0.18);
-  background: radial-gradient(
-    circle,
-    rgba(22, 115, 175, 0.24) 0%,
-    rgba(22, 115, 175, 0) 74%
-  );
+  background: radial-gradient(circle,
+      rgba(22, 115, 175, 0.24) 0%,
+      rgba(22, 115, 175, 0) 74%);
   opacity: 0;
   transition: opacity 180ms ease, transform 260ms ease;
   pointer-events: none;
@@ -2577,11 +2590,9 @@ h3 {
 }
 
 .site-header .btn.nav-cursor-item::before {
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.38) 0%,
-    rgba(255, 255, 255, 0) 74%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.38) 0%,
+      rgba(255, 255, 255, 0) 74%);
 }
 
 .site-header .btn.nav-cursor-item:hover,
@@ -2635,11 +2646,9 @@ h3 {
   pointer-events: none;
   opacity: 0;
   transform: translateY(-12px);
-  background: radial-gradient(
-    120% 100% at 50% 0%,
-    rgba(22, 115, 175, 0.2) 0%,
-    rgba(22, 115, 175, 0) 78%
-  );
+  background: radial-gradient(120% 100% at 50% 0%,
+      rgba(22, 115, 175, 0.2) 0%,
+      rgba(22, 115, 175, 0) 78%);
   transition: opacity 260ms ease, transform 260ms ease;
 }
 
@@ -2650,12 +2659,10 @@ h3 {
   right: 1rem;
   top: 0.7rem;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(22, 115, 175, 0) 0%,
-    rgba(22, 115, 175, 0.42) 50%,
-    rgba(22, 115, 175, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(22, 115, 175, 0) 0%,
+      rgba(22, 115, 175, 0.42) 50%,
+      rgba(22, 115, 175, 0) 100%);
   opacity: 0;
   transform: scaleX(0.7);
   transition: opacity 260ms ease, transform 300ms ease;
@@ -2737,6 +2744,7 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .services-grid-premium .service-card,
   .services-grid-premium .service-pill,
   .services-grid-premium .service-title,
@@ -2780,11 +2788,9 @@ h3 {
   width: 320px;
   height: 220px;
   pointer-events: none;
-  background: radial-gradient(
-    circle at center,
-    rgba(22, 115, 175, 0.16) 0%,
-    rgba(22, 115, 175, 0) 74%
-  );
+  background: radial-gradient(circle at center,
+      rgba(22, 115, 175, 0.16) 0%,
+      rgba(22, 115, 175, 0) 74%);
 }
 
 .services-spotlight-shell.is-hovered {
@@ -2974,11 +2980,9 @@ h3 {
 .services-spotlight-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.24),
-    rgba(15, 23, 42, 0) 48%
-  );
+  background: linear-gradient(to top,
+      rgba(15, 23, 42, 0.24),
+      rgba(15, 23, 42, 0) 48%);
   opacity: 0.3;
   transition: opacity 260ms ease;
 }
@@ -3094,6 +3098,7 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .services-spotlight-shell,
   .services-spotlight-line,
   .services-spotlight-title,
@@ -3537,9 +3542,11 @@ h3 {
     transform: translateY(-8%);
     opacity: 0;
   }
+
   45% {
     opacity: 0.75;
   }
+
   to {
     transform: translateY(104%);
     opacity: 0;
@@ -3547,20 +3554,24 @@ h3 {
 }
 
 @keyframes aboutOrbFloatA {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(14px, -16px, 0);
   }
 }
 
 @keyframes aboutOrbFloatB {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(-18px, 16px, 0);
   }
@@ -3570,6 +3581,7 @@ h3 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -3579,16 +3591,19 @@ h3 {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
 }
 
 @keyframes aboutNodePulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.15);
   }
@@ -3646,6 +3661,7 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .about-immersive-shell,
   .about-core-card,
   .about-node,

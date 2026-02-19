@@ -309,11 +309,14 @@ export default function Home() {
       <header className="site-header">
         <div className="container header-row">
           <a href="#home" className="brand">
-            <span className="brand-mark">AR</span>
-            <span className="brand-label">
-              <strong>ArCon</strong>
-              <small>Engineering Services</small>
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="ArCon Engineering Services Logo"
+              width={120}
+              height={120}
+              className="brand-logo"
+              priority
+            />
           </a>
 
           <nav className="site-nav" aria-label="Primary">
@@ -681,7 +684,13 @@ export default function Home() {
         <div className="container footer-main">
           <div className="footer-brand">
             <div className="footer-brand-head">
-              <span className="brand-mark">AR</span>
+              <Image
+                src="/images/logo.png"
+                alt="ArCon Engineering Services Logo"
+                width={48}
+                height={48}
+                className="brand-logo"
+              />
               <div>
                 <h3>ArCon Engineering Services</h3>
                 <p>Integrated design and execution support consultancy.</p>

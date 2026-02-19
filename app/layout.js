@@ -15,6 +15,10 @@ export const metadata = {
   title: "ArCon Engineering Services",
   description:
     "ArCon Engineering Services delivers integrated MEP, HVAC, Civil, Architectural, and Project Management solutions.",
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
