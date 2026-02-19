@@ -16,8 +16,8 @@ export const metadata = {
   description:
     "ArCon Engineering Services delivers integrated MEP, HVAC, Civil, Architectural, and Project Management solutions.",
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 

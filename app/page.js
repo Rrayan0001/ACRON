@@ -212,6 +212,7 @@ const allProjectItems = Array.from(
 
 export default function Home() {
   const [formNote, setFormNote] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navCursorProps = {
     onMouseMove: handleNavCursorMove,
     onMouseLeave: handleNavCursorLeave,
@@ -339,8 +340,68 @@ export default function Home() {
           >
             Start Project
           </a>
+
+          <button
+            className="mobile-toggle"
+            aria-label="Open navigation menu"
+            onClick={() => setMobileOpen(true)}
+          >
+            ☰
+          </button>
         </div>
       </header>
+
+      {mobileOpen && (
+        <>
+          <div
+            className="mobile-menu-overlay"
+            aria-hidden="true"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <div className="mobile-menu-header">
+              <a href="#home" className="brand" onClick={() => setMobileOpen(false)}>
+                <Image
+                  src="/images/logo.png"
+                  alt="ArCon Engineering Services Logo"
+                  width={80}
+                  height={80}
+                  className="brand-logo"
+                />
+              </a>
+              <button
+                className="mobile-menu-close"
+                aria-label="Close navigation menu"
+                onClick={() => setMobileOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
+
+            <nav className="mobile-nav" aria-label="Mobile navigation">
+              {primaryNavLinks.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="mobile-menu-cta">
+              <a
+                className="btn btn-dark"
+                href="#contact"
+                onClick={() => setMobileOpen(false)}
+              >
+                Start Project
+              </a>
+            </div>
+          </div>
+        </>
+      )}
 
       <main id="home">
         {/* ───── HERO ───── */}
@@ -354,7 +415,7 @@ export default function Home() {
                 className="reveal-item"
                 style={{ "--reveal-delay": "0.12s" }}
               >
-                Practical engineering portfolio built for real execution.
+                Practical Engineering Portfolio built for real execution.
               </h1>
               <p className="lead reveal-item" style={{ "--reveal-delay": "0.24s" }}>
                 Integrated MEP, HVAC, Civil, and architectural coordination with
@@ -477,7 +538,7 @@ export default function Home() {
           <div className="marquee-stack">
             <MarqueeAnimation
               direction="left"
-              baseVelocity={4}
+              baseVelocity={2.5}
               className="marquee-track-primary"
             >
               {marqueeCompanyLine}
@@ -485,7 +546,7 @@ export default function Home() {
 
             <MarqueeAnimation
               direction="right"
-              baseVelocity={1.8}
+              baseVelocity={1.1}
               className="marquee-track-secondary"
             >
               {marqueeSignatureLine}
