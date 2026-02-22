@@ -120,12 +120,14 @@ const team = [
     role: "Director",
     summary:
       "12+ years of UAE experience across mechanical design, MEP/civil facade management, contracts, and operations leadership.",
+    image: "/images/arcon/Aditi.jpeg",
   },
   {
     name: "Mr. Sudhir Patil",
     role: "Director Partner",
     summary:
       "Three decades of civil construction experience across residential and commercial projects with strong site execution control.",
+    image: "/images/arcon/Sudhir.jpeg",
   },
 ];
 
@@ -538,7 +540,7 @@ export default function Home() {
           <div className="marquee-stack">
             <MarqueeAnimation
               direction="left"
-              baseVelocity={2.5}
+              baseVelocity={1.9}
               className="marquee-track-primary"
             >
               {marqueeCompanyLine}
@@ -546,7 +548,7 @@ export default function Home() {
 
             <MarqueeAnimation
               direction="right"
-              baseVelocity={1.1}
+              baseVelocity={0.85}
               className="marquee-track-secondary"
             >
               {marqueeSignatureLine}

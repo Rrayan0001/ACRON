@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
@@ -70,14 +71,28 @@ export default function AnimatedLeadership({ leaders, autoplay = true }) {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="leadership-card"
                 >
-                  <div className="leadership-card-inner">
-                    <div
-                      className={`leadership-icon leadership-icon-${leader.iconShape}`}
-                      aria-hidden="true"
-                    >
-                      <span>{leader.initials}</span>
-                    </div>
-                    <p className="leadership-card-label">Leadership Profile</p>
+                  <div className={`leadership-card-inner ${leader.image ? 'has-image-bg' : ''}`}>
+                    {leader.image ? (
+                      <>
+                        <Image
+                          src={leader.image}
+                          alt={leader.name}
+                          fill
+                          className="leadership-image-full"
+                          style={{ objectPosition: leader.name.includes('Aditi') ? 'center 10%' : 'center 25%' }}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className={`leadership-icon leadership-icon-${leader.iconShape}`}
+                          aria-hidden="true"
+                        >
+                          <span>{leader.initials}</span>
+                        </div>
+                        <p className="leadership-card-label">Leadership Profile</p>
+                      </>
+                    )}
                   </div>
                 </motion.div>
               );
