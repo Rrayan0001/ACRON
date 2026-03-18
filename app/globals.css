@@ -72,6 +72,7 @@ body.intro-active {
   pointer-events: none;
   line-height: 1;
   margin: 0;
+  filter: drop-shadow(0 0 20px rgba(77, 168, 218, 0.2));
   transition:
     top 800ms,
     left 800ms,
@@ -79,8 +80,13 @@ body.intro-active {
     font-size 800ms,
     letter-spacing 800ms,
     opacity 600ms,
+    filter 800ms,
     clip-path 500ms cubic-bezier(0.76, 0, 0.24, 1);
-  will-change: top, left, transform, font-size, clip-path, opacity;
+  will-change: top, left, transform, font-size, clip-path, opacity, filter;
+}
+
+body.intro-active .intro-logo[style*="top: 1.6rem"] {
+  filter: drop-shadow(0 0 0px rgba(77, 168, 218, 0)) !important;
 }
 
 .intro-logo-ar {
@@ -95,34 +101,59 @@ body.intro-active {
 .intro-sub {
   position: fixed;
   z-index: 9100;
-  top: calc(50% + clamp(1.8rem, 5vw, 4rem));
+  top: calc(50% + clamp(2rem, 6vw, 5rem));
   left: 50%;
   transform: translate(-50%, 0);
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
   transition:
-    opacity 400ms cubic-bezier(0.76, 0, 0.24, 1),
-    transform 400ms cubic-bezier(0.76, 0, 0.24, 1);
+    opacity 600ms cubic-bezier(0.76, 0, 0.24, 1),
+    transform 600ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .intro-sub-text {
-  font-size: clamp(0.55rem, 1.2vw, 0.85rem);
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  color: rgba(255, 255, 255, 0.45);
-  text-transform: uppercase;
-  white-space: nowrap;
   font-family: var(--font-body), "Manrope", sans-serif;
+  white-space: nowrap;
+}
+
+.intro-sub-line1 {
+  font-size: clamp(0.75rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, #4da8da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-sub-line2 {
+  font-size: clamp(0.6rem, 1vw, 0.85rem);
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
 }
 
 /* ── Mobile optimisations ── */
 @media (max-width: 640px) {
   .intro-sub {
-    top: calc(50% + clamp(1.4rem, 6vw, 2.8rem));
+    top: calc(50% + clamp(2rem, 8vw, 3.5rem));
+    gap: 0.5rem;
   }
 
-  .intro-sub-text {
+  .intro-sub-line1 {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .intro-sub-line2 {
     font-size: 0.55rem;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.15em;
   }
 
   .intro-grid-v1 { left: 15%; }

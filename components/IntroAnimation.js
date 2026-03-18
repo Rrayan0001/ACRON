@@ -75,11 +75,12 @@ export default function IntroAnimation({ onComplete }) {
           transform:
             phase === "reveal"
               ? "translate(-50%, 0)"
-              : "translate(-50%, 6px)",
+              : "translate(-50%, 15px)",
           pointerEvents: "none",
         }}
       >
-        <span className="intro-sub-text">Engineering Services Pvt. Ltd.</span>
+        <span className="intro-sub-text intro-sub-line1">“Now Live: Arcon ESPL.”</span>
+        <span className="intro-sub-text intro-sub-line2">Your trusted partner in progress.</span>
       </div>
 
       {/* ===== LOGO TEXT — center → header ===== */}
