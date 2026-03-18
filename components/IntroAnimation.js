@@ -108,8 +108,8 @@ export default function IntroAnimation({ onComplete }) {
                 transform: `translate(-50%, -50%) scaleX(${
                   phase === "init" || phase === "grid" ? 1.06 : 1
                 })`,
-                fontSize: "clamp(2.2rem, 7vw, 5.5rem)",
-                letterSpacing: "0.1em",
+                fontSize: "clamp(3.5rem, 11vw, 9rem)",
+                letterSpacing: "0.08em",
                 opacity: 1,
               }),
         }}
