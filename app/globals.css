@@ -1,3 +1,148 @@
+/* ============================================
+   INTRO MASK ANIMATION
+   ============================================ */
+
+/* Lock scroll while intro is playing */
+body.intro-active {
+  overflow: hidden !important;
+}
+
+/* ── Black overlay ── */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0a1628;
+  z-index: 9000;
+  transition: clip-path 800ms;
+  pointer-events: none;
+  will-change: clip-path;
+}
+
+/* ── Architectural grid lines ── */
+.intro-grid {
+  position: absolute;
+  background: rgba(22, 115, 175, 0.12);
+}
+
+.intro-grid-v1 {
+  left: 25%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 700ms;
+}
+
+.intro-grid-v2 {
+  right: 25%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 700ms 60ms;
+}
+
+.intro-grid-h1 {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 700ms 120ms;
+}
+
+.intro-grid-v1.draw { transform: scaleY(1); }
+.intro-grid-v2.draw { transform: scaleY(1); }
+.intro-grid-h1.draw { transform: scaleX(1); }
+
+/* ── Logo text ── */
+.intro-logo {
+  position: fixed;
+  z-index: 9100;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  white-space: nowrap;
+  font-family: var(--font-display), "Space Grotesk", sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  pointer-events: none;
+  line-height: 1;
+  margin: 0;
+  transition:
+    top 800ms,
+    left 800ms,
+    transform 800ms,
+    font-size 800ms,
+    letter-spacing 800ms,
+    opacity 600ms,
+    clip-path 500ms cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: top, left, transform, font-size, clip-path, opacity;
+}
+
+.intro-logo-ar {
+  color: #ffffff;
+}
+
+.intro-logo-con {
+  color: #4da8da;
+}
+
+/* ── Subtitle ── */
+.intro-sub {
+  position: fixed;
+  z-index: 9100;
+  top: calc(50% + clamp(1.8rem, 5vw, 4rem));
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  transition:
+    opacity 400ms cubic-bezier(0.76, 0, 0.24, 1),
+    transform 400ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.intro-sub-text {
+  font-size: clamp(0.55rem, 1.2vw, 0.85rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: var(--font-body), "Manrope", sans-serif;
+}
+
+/* ── Mobile optimisations ── */
+@media (max-width: 640px) {
+  .intro-sub {
+    top: calc(50% + clamp(1.4rem, 6vw, 2.8rem));
+  }
+
+  .intro-sub-text {
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+  }
+
+  .intro-grid-v1 { left: 15%; }
+  .intro-grid-v2 { right: 15%; }
+}
+
+/* ── Respect reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay,
+  .intro-logo,
+  .intro-sub,
+  .intro-grid {
+    transition-duration: 0ms !important;
+  }
+}
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+
 :root {
   --bg: #ffffff;
   --bg-alt: #f0f8ff;

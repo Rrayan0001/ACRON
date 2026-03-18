@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { MarqueeAnimation } from "@/components/ui/marquee-effect";
 import AnimatedLeadership from "@/components/ui/animated-leadership";
 import AnimatedProcess from "@/components/ui/animated-process";
 import AnimatedAbout from "@/components/ui/animated-about";
 import AnimatedServicesSpotlight from "@/components/ui/animated-services-spotlight";
+import IntroAnimation from "@/components/IntroAnimation";
 
 const services = [
   {
@@ -215,6 +216,8 @@ const allProjectItems = Array.from(
 export default function Home() {
   const [formNote, setFormNote] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [introDone, setIntroDone] = useState(false);
+  const handleIntroComplete = useCallback(() => setIntroDone(true), []);
   const navCursorProps = {
     onMouseMove: handleNavCursorMove,
     onMouseLeave: handleNavCursorLeave,
@@ -309,6 +312,8 @@ export default function Home() {
 
   return (
     <>
+      {!introDone && <IntroAnimation onComplete={handleIntroComplete} />}
+
       <header className="site-header">
         <div className="container header-row">
           <a href="#home" className="brand">
