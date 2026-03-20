@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev -p 2000",
+    "dev": "next dev -p 1000",
     "build": "next build",
-    "start": "next start -p 2000",
+    "start": "next start -p 1000",
     "lint": "eslint ."
   },
   "keywords": [],

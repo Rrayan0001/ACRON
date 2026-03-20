@@ -544,19 +544,19 @@ export default function Home() {
         <section className="section section-alt marquee-process-section">
           <div className="marquee-stack">
             <MarqueeAnimation
-              direction="left"
-              baseVelocity={1.9}
-              className="marquee-track-primary"
-            >
-              {marqueeCompanyLine}
-            </MarqueeAnimation>
-
-            <MarqueeAnimation
               direction="right"
-              baseVelocity={0.85}
+              baseVelocity={0.45}
               className="marquee-track-secondary"
             >
               {marqueeSignatureLine}
+            </MarqueeAnimation>
+
+            <MarqueeAnimation
+              direction="left"
+              baseVelocity={1.0}
+              className="marquee-track-primary"
+            >
+              {marqueeCompanyLine}
             </MarqueeAnimation>
           </div>
         </section>
@@ -682,7 +682,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="reveal-item" style={{ "--reveal-delay": "0.24s" }}>
-              <AnimatedLeadership leaders={team} autoplay />
+              <AnimatedLeadership leaders={team} />
             </div>
           </div>
         </section>
@@ -710,7 +710,7 @@ export default function Home() {
                 <strong>Phone:</strong> +91 81232 15674
               </p>
               <p className="reveal-item" style={{ "--reveal-delay": "0.48s" }}>
-                <strong>Email:</strong> arcon.espl@gmail.com
+                <strong>Email:</strong> info@arconespl.com
               </p>
             </div>
 
@@ -805,7 +805,7 @@ export default function Home() {
             <h4>Contact</h4>
             <ul>
               <li>+91 81232 15674</li>
-              <li>arcon.espl@gmail.com</li>
+              <li>info@arconespl.com</li>
               <li>Dharwad, Karnataka, India</li>
               <li>
                 <a href="#home">Back to top</a>
