@@ -121,14 +121,14 @@ const team = [
     role: "Director",
     summary:
       "12+ years of UAE experience across mechanical design, MEP/civil facade management, contracts, and operations leadership.",
-    image: "/images/arcon/Aditi.jpeg",
+    image: "/images/arcon/aditi_new.png",
   },
   {
     name: "Mr. Sudhir Patil",
     role: "Director Partner",
     summary:
       "Three decades of civil construction experience across residential and commercial projects with strong site execution control.",
-    image: "/images/arcon/Sudhir.jpeg",
+    image: "/images/arcon/sudhir_new.png",
   },
 ];
 

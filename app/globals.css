@@ -1648,13 +1648,14 @@ h3 {
 
 .leadership-photo-frame {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
+  width: min(100%, 300px);
+  aspect-ratio: 4 / 5;
   border-radius: 16px;
   overflow: hidden;
   background: #dbe5f0;
   border: 1px solid rgba(148, 163, 184, 0.32);
   flex-shrink: 0;
+  margin: 0 auto;
 }
 
 .leadership-photo {
@@ -1703,6 +1704,25 @@ h3 {
   }
 }
 
+@media (min-width: 900px) {
+  .leadership-card-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.2rem;
+  }
+
+  .leadership-photo-frame {
+    width: 260px;
+    margin: 0;
+  }
+
+  .leadership-copy {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 760px) {
   .leadership-shell {
     border-radius: 10px;
@@ -1715,7 +1735,8 @@ h3 {
   }
 
   .leadership-photo-frame {
-    aspect-ratio: 4 / 3;
+    width: min(100%, 260px);
+    aspect-ratio: 4 / 5;
   }
 }
 
