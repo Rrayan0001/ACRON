@@ -7,6 +7,7 @@ import AnimatedLeadership from "@/components/ui/animated-leadership";
 import AnimatedProcess from "@/components/ui/animated-process";
 import AnimatedAbout from "@/components/ui/animated-about";
 import AnimatedServicesSpotlight from "@/components/ui/animated-services-spotlight";
+import OurWorkGallery from "@/components/ui/our-work-gallery";
 import IntroAnimation from "@/components/IntroAnimation";
 
 const services = [
@@ -111,6 +112,7 @@ const primaryNavLinks = [
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
+  { href: "#work", label: "Our Work" },
   { href: "#team", label: "Team" },
   { href: "#contact", label: "Contact" },
 ];
@@ -212,6 +214,61 @@ const allProjectItems = Array.from(
     };
   }
 );
+
+const ourWorkItems = [
+  {
+    src: "/images/work/work-02-industrial-hall-hvac.jpeg",
+    alt: "Large industrial hall with exposed HVAC ducts, fire pipes and site team at work.",
+  },
+  {
+    src: "/images/work/work-07-hvac-duct-installation.jpeg",
+    alt: "Galvanized HVAC ducts staged inside steel-structure building during installation.",
+  },
+  {
+    src: "/images/work/work-05-fire-pump-room.jpeg",
+    alt: "Fire pump room with red pumps, valves and overhead piping viewed from above.",
+  },
+  {
+    src: "/images/work/work-06-fire-pump-system.jpeg",
+    alt: "Close-up of fire pump skids with red pipework, gauges and control panel.",
+  },
+  {
+    src: "/images/work/work-13-fire-zone-control-valve.jpeg",
+    alt: "Red fire-fighting zone control valve with pressure gauge on block wall.",
+  },
+  {
+    src: "/images/work/work-04-fire-safety-installation.jpeg",
+    alt: "Dry powder and CO2 extinguishers mounted on column with ceiling pipework.",
+  },
+  {
+    src: "/images/work/work-09-main-electrical-panel.jpeg",
+    alt: "Open main panel with neatly dressed red-yellow-blue cabling and breakers.",
+  },
+  {
+    src: "/images/work/work-01-electrical-panel-mccb.jpeg",
+    alt: "Schneider MCCB panel with color-coded cable terminations and ferrules.",
+  },
+  {
+    src: "/images/work/work-12-distribution-board-wiring.jpeg",
+    alt: "Distribution board with Hager breakers and tidy RYB wiring.",
+  },
+  {
+    src: "/images/work/work-11-office-distribution-board.jpeg",
+    alt: "Schneider office distribution board labeled Office 601 to 605 with lockout.",
+  },
+  {
+    src: "/images/work/work-10-cable-tray-routing.jpeg",
+    alt: "Overhead ladder tray with tagged and bundled power cables.",
+  },
+  {
+    src: "/images/work/work-08-electrical-isolator-box.jpeg",
+    alt: "Wall-mounted isolator box fed from perforated cable tray.",
+  },
+  {
+    src: "/images/work/work-03-scaffold-electrical-work.jpeg",
+    alt: "Technician on mobile scaffold terminating high-level electrical services.",
+  },
+];
 
 export default function Home() {
   const [formNote, setFormNote] = useState("");
@@ -667,6 +724,43 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ───── OUR WORK ───── */}
+        <section id="work" className="section">
+          <div className="container block">
+            <div className="section-head">
+              <p className="kicker reveal-item" style={{ "--reveal-delay": "0s" }}>
+                Our Work
+              </p>
+              <h2
+                className="reveal-item"
+                style={{ "--reveal-delay": "0.12s" }}
+              >
+                Real site execution by the ArCon team.
+              </h2>
+              <p
+                className="portfolio-subline reveal-item"
+                style={{ "--reveal-delay": "0.2s" }}
+              >
+                Live MEP, electrical, fire-fighting, and HVAC coordination
+                snapshots from active commercial and industrial sites.
+              </p>
+            </div>
+
+            <div className="reveal-item" style={{ "--reveal-delay": "0.24s" }}>
+              <OurWorkGallery items={ourWorkItems} />
+            </div>
+
+            <div
+              className="reveal-item"
+              style={{ "--reveal-delay": "0.2s", marginTop: "2rem", textAlign: "center" }}
+            >
+              <a href="#contact" className="btn btn-dark">
+                Discuss Similar Work
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ───── TEAM ───── */}
         <section id="team" className="section">
           <div className="container block">
@@ -780,6 +874,9 @@ export default function Home() {
               </li>
               <li>
                 <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#work">Our Work</a>
               </li>
               <li>
                 <a href="#team">Team</a>
